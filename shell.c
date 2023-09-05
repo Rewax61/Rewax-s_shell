@@ -116,6 +116,8 @@ int main() {
         
         if (! strcmp(cmd, "exit")) {
             break;
+        } else if (! strcmp(cmd, "help")) {
+            printf("Available commands: \n\texit: quit the shell\n\tclear: clean the shell\n\trestart: reboot the shell\n\thello: show a huge \"Hello World!\"\n\tbell: play alert sound\n");
         } else if (! strcmp(cmd, "hello")) {
             printf(" /$$   /$$           /$$ /$$                 /$$      /$$                     /$$       /$$ /$$\n"
 "| $$  | $$          | $$| $$                | $$  /$ | $$                    | $$      | $$| $$\n"
@@ -132,7 +134,7 @@ int main() {
         } else if (! strcmp(cmd, "bell")) {
             printf("\a");
         } else {
-            fprintf(stderr, "%s: command not found\n", cmd);
+            fprintf(stderr, "%s: command not found\ntype \"help\" for more information\n", cmd);
         }
     }
 
